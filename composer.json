@@ -1,0 +1,21 @@
+{
+    "name": "iaorana/framework",
+    "require": {
+        "nilportugues/sql-query-builder": "^1.8",
+        "ramsey/uuid": "^4.1",
+        "doctrine/collections": "^1.6",
+        "jdorn/sql-formatter": "^1.2",
+        "jasongrimes/paginator": "^1.0",
+        "monolog/monolog": "^2.2"
+    },
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0-dev",
+    "minimum-stability": "stable",
+    "description": "A WordPress plugin development framework",
+    "autoload": {
+        "psr-4": {
+            "Iaorana\\Framework\\": "src/"
+        }
+    }
+}

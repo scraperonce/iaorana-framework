@@ -1,0 +1,17 @@
+{
+  "[php]": {
+    "editor.defaultFormatter": "valeryanm.vscode-phpsab",
+  },
+  "cSpell.words": [
+    "Iaorana",
+    "Noncable",
+    "Portugues",
+    "Renderable",
+    "Validatable",
+    "navspan",
+    "satisfiables",
+    "tablenav",
+    "userdata",
+    "wpdb"
+  ]
+}
