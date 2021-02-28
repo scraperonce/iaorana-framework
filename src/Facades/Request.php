@@ -61,8 +61,13 @@ class Request {
         return strtoupper($method) === $_SERVER['REQUEST_METHOD'];
     }
 
-    public static function uri(): string {
-        return $_SERVER['REQUEST_URI'];
+    public static function uri(bool $full = false): string {
+        if ($full) {
+            return (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http")
+                . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        } else {
+            return $_SERVER['REQUEST_URI'];
+        }
     }
 
     public static function extractFromUri(string $pattern, ?string $uri = null): Collection {
