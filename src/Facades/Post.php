@@ -4,10 +4,10 @@ namespace Iaorana\Framework\Facades;
 
 class Post {
 
-    protected static $cache_page = [];
-    protected static $cache_post = [];
+    private static $cache_page = [];
+    private static $cache_post = [];
 
-    protected static $default_args = [
+    private static $default_args = [
         "nopaging" => true,
         'page' => 0,
         'posts_per_page'=> -1,
@@ -93,11 +93,7 @@ class Post {
 
         $result = new \WP_Query(array_merge(self::$default_args, $query_args));
 
-        $posts = $result->have_posts() ? $result->posts : [];
-
-        $result->reset_postdata();
-
-        return $posts;
+        return $result->have_posts() ? $result->posts : [];
     }
 
     public static function current(): ?\WP_Post {
