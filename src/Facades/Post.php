@@ -21,6 +21,10 @@ class Post {
     ];
 
     public static function fromSlug($slug): ?\WP_Post {
+        if (empty($slug)) {
+            return null;
+        }
+
         $slug = strval($slug);
 
         if (array_key_exists($slug, self::$cache_page)) {
@@ -39,6 +43,11 @@ class Post {
 
     public static function fromId($id, string $type = null): ?\WP_Post {
         $type = $type ? $type : 'page';
+
+        if (empty($id)) {
+            return null;
+        }
+
         $id = intval($id, 10);
 
         $key = "${id}_${type}";
@@ -57,8 +66,16 @@ class Post {
         return self::$cache_post[$key];
     }
 
-    public static function getChildren($id, string $type = null) {
+    /**
+     * @return \WP_Post[]
+     */
+    public static function getChildren($id, string $type = null): array {
         $type = $type ? $type : 'page';
+ 
+        if (empty($id)) {
+            return [];
+        }
+ 
         $id = intval($id, 10);
 
         return self::query([
