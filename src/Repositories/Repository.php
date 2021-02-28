@@ -133,8 +133,6 @@ abstract class Repository {
         $sql = $builder->write($query);
         $stmt = $this->prepare($sql, $builder->getValues());
 
-        Log::getLogger()->debug("sql", [$sql, $builder->getValues()]);
-
         $result = $this->db->query($stmt);
 
         QueryHistory::add($this->db->last_query);
