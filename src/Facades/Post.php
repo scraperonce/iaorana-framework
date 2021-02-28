@@ -58,7 +58,7 @@ class Post {
 
         $result = self::query([
             "post_type" => $type,
-            "p" => $id,
+            "post__in" => [$id],
         ]);
 
         self::$cache_post[$key] = !empty($result) ? reset($result) : null;
