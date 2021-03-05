@@ -4,6 +4,8 @@ namespace Iaorana\Framework\Facades;
 
 class Post {
 
+    public static $cache = false;
+
     private static $cache_page = [];
     private static $cache_post = [];
 
@@ -27,7 +29,7 @@ class Post {
 
         $slug = strval($slug);
 
-        if (array_key_exists($slug, self::$cache_page)) {
+        if (self::$cache && array_key_exists($slug, self::$cache_page)) {
             return self::$cache_page[$slug];
         }
 
@@ -52,7 +54,7 @@ class Post {
 
         $key = "${id}_${type}";
 
-        if (array_key_exists($key, self::$cache_post)) {
+        if (self::$cache && array_key_exists($key, self::$cache_post)) {
             return self::$cache_post[$key];
         }
 
