@@ -93,11 +93,7 @@ class Post {
     public static function query(array $query_args): array {
         $result = new \WP_Query(array_merge(self::$default_args, $query_args));
 
-        $posts = $result->have_posts() ? $result->posts : [];
-
-        wp_reset_query();
-
-        return $posts;
+        return $result->have_posts() ? $result->posts : [];
     }
 
     public static function current(): ?\WP_Post {
