@@ -50,11 +50,11 @@ class Request {
      * @throws \InvalidArgumentException
      */
     public static function uploadedFile(string $key): UploadedFile {
-        return UploadedFile::fromFileRequest($_FILES[$key]);
+        return UploadedFile::fromFileRequest(isset($_FILES[$key]) ? $_FILES[$key] : []);
     }
 
     public static function uploadedFileExists(string $key): bool {
-        return UploadedFile::exists($_FILES[$key]);
+        return UploadedFile::exists(isset($_FILES[$key]) ? $_FILES[$key] : []);
     }
 
     public static function is(string $method): bool {
