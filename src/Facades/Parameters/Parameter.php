@@ -57,7 +57,7 @@ abstract class Parameter implements ValidatableParameterInterface {
     }
 
     public function currentValue($key) {
-        return !$this->hasError() ? $this->input($key) : '';
+        return $this->hasError() ? $this->input($key) : '';
     }
 
     public function input($key, string $type = Type::AS_IS) {
