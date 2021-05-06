@@ -10,7 +10,6 @@
     },
     "type": "library",
     "license": "MIT",
-    "version": "1.0.0-dev",
     "minimum-stability": "stable",
     "description": "A WordPress plugin development framework",
     "autoload": {
