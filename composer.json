@@ -1,5 +1,5 @@
 {
-    "name": "iaorana/framework",
+    "name": "scraperonce/iaorana-framework",
     "require": {
         "nilportugues/sql-query-builder": "^1.8",
         "ramsey/uuid": "^4.1",

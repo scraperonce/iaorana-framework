@@ -1,5 +1,5 @@
-# iaorana-framework
+# Iaorana Framework
 A WordPress plugin development framework.
 
-# Installation
-
+## Require
+This package require composer.
